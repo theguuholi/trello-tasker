@@ -3,16 +3,19 @@ defmodule TrelloTaskerWeb.PageLive do
 
   @impl true
   def mount(_params, _session, socket) do
+    IO.inspect "comeca por aqui"
     {:ok, assign(socket, query: "", results: %{})}
   end
 
   @impl true
   def handle_event("suggest", %{"q" => query}, socket) do
+    IO.inspect "quando digita algo"
     {:noreply, assign(socket, results: search(query), query: query)}
   end
 
   @impl true
   def handle_event("search", %{"q" => query}, socket) do
+    IO.inspect("quanto tem eventos lida por aqui")
     case search(query) do
       %{^query => vsn} ->
         {:noreply, redirect(socket, external: "https://hexdocs.pm/#{query}/#{vsn}")}
