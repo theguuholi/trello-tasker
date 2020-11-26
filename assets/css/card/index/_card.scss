@@ -1,0 +1,49 @@
+a{
+  background: darken( $bg-color, 0);
+  border: 1px solid $detail-color;
+  border-radius: 15px;
+  width: 100%;
+  padding: 12px;
+  display: block;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s;
+
+  & + a {
+    margin-top: 16px;
+  }
+
+  &:hover{
+    background: lighten($detail-color-2, 80);
+    transform: translateX(10px);
+  }
+
+  img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  div{
+    margin-left: 16px;
+
+    strong{
+      font-size: 20px;
+      color: $detail-color;
+    }
+
+    p{
+      font-size: 18px;
+      color: #24252a;
+    }
+
+  }
+
+  i{
+    size: 70px;
+    color: $detail-color-3;
+    margin-left: auto;
+  }
+}

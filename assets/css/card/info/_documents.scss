@@ -1,0 +1,46 @@
+.documents {
+  margin-top: 80px;
+
+  a{
+    background: $bg-color;
+    border: 1px solid $detail-color;
+    border-radius: 5px;
+    width: 100%;
+    padding: 24px;
+    display: block;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+
+    & + a {
+      margin-top: 16px;
+    }
+
+    &:hover{
+      transform: translateX(10px);
+    }
+
+    div{
+      margin-left: 16px;
+
+      strong{
+        font-size: 20px;
+        color: $detail-color-1;
+      }
+
+      p{
+        font-size: 18px;
+        color: $detail-color-1;
+      }
+
+    }
+
+    i{
+      size: 70px;
+      color: $detail-color-3;
+      margin-left: auto;
+    }
+  }
+}

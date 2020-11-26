@@ -26,7 +26,7 @@ button {
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #ffe9ce, #fff);
+    background: $gradient-detail;
     top: -10%;
     right: 48%;
     z-index: -1;
@@ -42,18 +42,18 @@ header#main {
   justify-content: space-between;
 
   strong{
-    color: #4e51bf;
+    color: $detail-color;
   }
 
   a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: $header-main-a;
+    color: $detail-color;
     transition: color 0.4;
 
     &:hover {
-      color: darken($header-main-a, 20);
+      color: darken($detail-color, 20);
     }
 
     i {

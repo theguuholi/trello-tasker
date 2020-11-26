@@ -1,14 +1,15 @@
 $bg-color: #fff;
 $error-color: #a94442;
-$header-main-a: #4e51bf;
-$card-index-h1-color: #24252a;
-$f-create-card-input-color: #24252a;
-$f-create-card-input-bgc: #4e51bf;
-
+$detail-color: #4e51bf;
+$detail-color-1: #24252a;
+$detail-color-2: #ffe9ce;
+$detail-color-3: #ff92a4;
+$gradient-detail: linear-gradient(-45deg, $detail-color-2, #fff);
 
 @import "../node_modules/nprogress/nprogress.css";
 @import "global";
-@import "card/index";
+@import "card/index/index";
+@import "card/info/info";
 
 /* LiveView specific classes for your customizations */
 // .invalid-feedback {
