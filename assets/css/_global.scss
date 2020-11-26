@@ -12,14 +12,29 @@ body {
 body,
 input,
 button {
-  font: 16px Roboto, sans-serif;
+  font: 16px Poppins, sans-serif;
 }
 
 #root {
   max-width: 960px;
   margin: 0 auto;
   padding: 40px 20px;
+
+  &:before{
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #ffe9ce, #fff);
+    top: -10%;
+    right: 48%;
+    z-index: -1;
+    transform: translateY(-50%);
+  }
 }
+
+
 
 header#main {
   display: flex;

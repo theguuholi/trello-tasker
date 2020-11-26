@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tag() %>
   <%= live_title_tag assigns[:page_title] || "TrelloTasker", suffix: " · Phoenix Framework" %>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://use.fontawesome.com/15458fa635.js"></script>
   <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>" />
   <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
@@ -17,8 +17,7 @@
   <div id="root">
 
     <header id="main">
-      Trello Tracker
-
+      <strong>Trello Tracker</strong>
       <a href="">
         <i class="fa fa-chevron-left"></i>
         Back

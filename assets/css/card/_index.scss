@@ -56,7 +56,7 @@ form#create-card {
   max-width: 700px;
 
   a{
-    background: darken( #fff, 2);
+    background: darken( #fff, 0);
     border: 1px solid #4e51bf;
     border-radius: 15px;
     width: 100%;
@@ -66,14 +66,14 @@ form#create-card {
 
     display: flex;
     align-items: center;
-    transition: transform 0.2s;
+    transition: transform 0.5s;
 
     & + a {
       margin-top: 16px;
     }
 
     &:hover{
-      background: darken( #fff, 6);
+      background: lighten(#ffe9ce, 80);
       transform: translateX(10px);
     }
 
@@ -100,7 +100,7 @@ form#create-card {
 
     i{
       size: 70px;
-      color: #4e51bf;
+      color: #ff92a4;
       margin-left: auto;
     }
   }
