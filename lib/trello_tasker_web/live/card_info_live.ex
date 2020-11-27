@@ -6,7 +6,10 @@ defmodule TrelloTaskerWeb.CardInfoLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    IO.inspect "test"
+    card_info = TrelloTasker.Shared.Services.Trello.get_card()
+    comments = TrelloTasker.Shared.Services.Trello.get_comments()
+    {:ok, assign(socket, comments: comments, card: card_info)}
   end
 
   @impl true

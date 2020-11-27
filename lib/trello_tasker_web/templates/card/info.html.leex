@@ -1,12 +1,12 @@
 <section class="card-info">
   <header>
     <img
-      src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x171/2b15677fc7c06398422c60781fa453ff/photo-1605894646636-bab3db312b65.jpg"
-      alt="asfsaf">
+      src="<%= @card.image %>"
+      alt="<%= @card.name %>">
 
     <div>
-      <strong>theguuholi/elx_barber</strong>
-      <p>tasldkflksadlfjksdaljkflkjsaljkdfljskafl;asdfr</p>
+      <strong><%= @card.name %></strong>
+      <p><%= @card.description %></p>
     </div>
   </header>
 
@@ -27,25 +27,13 @@
 </section>
 
 <div class="documents">
+  <%= for comment <- @comments do %>
   <a href="">
     <div>
-      <strong>asdfsadfdsaf</strong>
-      <p>asfadsf</p>
+      <strong><%= comment.user %></strong>
+      <p><%= comment.text %></p>
     </div>
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
   </a>
-  <a href="">
-    <div>
-      <strong>asdfsadfdsaf</strong>
-      <p>asfadsf</p>
-    </div>
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-  </a>
-  <a href="">
-    <div>
-      <strong>asdfsadfdsaf</strong>
-      <p>asfadsf</p>
-    </div>
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-  </a>
+  <% end %>
 </div>
