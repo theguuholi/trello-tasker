@@ -1,8 +1,6 @@
 <section class="card-info">
   <header>
-    <img
-      src="<%= @card.image %>"
-      alt="<%= @card.name %>">
+    <img src="<%= @card.image %>" alt="<%= @card.name %>">
 
     <div>
       <strong><%= @card.name %></strong>
@@ -13,14 +11,14 @@
   <ul>
     <li>
       <span>
-        <i class="fa fa-clock-o" aria-hidden="true"></i>
-        20-11-2020
+        <i class="fa fa-clock-o <%= Date.compare(Date.utc_today(), @card.deliver_date) && "late" %>" aria-hidden="true"></i>
+        <%= @card.deliver_date %>
       </span>
     </li>
     <li>
       <span>
         <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-        Done
+        <%= @card.completed && "Done" || "In Progress" %>
       </span>
     </li>
   </ul>
@@ -28,7 +26,7 @@
 
 <div class="documents">
   <%= for comment <- @comments do %>
-  <a href="">
+  <a href="" id="">
     <div>
       <strong><%= comment.user %></strong>
       <p><%= comment.text %></p>

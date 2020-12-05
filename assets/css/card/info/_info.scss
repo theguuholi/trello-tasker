@@ -51,6 +51,10 @@ section.card-info {
         i{
           font-size: 50px;
           color: $detail-color;
+
+          &.late {
+            color: $detail-color-3;
+          }
         }
       }
     }

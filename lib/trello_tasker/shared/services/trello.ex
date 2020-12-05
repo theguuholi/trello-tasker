@@ -20,18 +20,25 @@ defmodule TrelloTasker.Shared.Services.Trello do
   end
 
   def get_card() do
+    card_id = "5hikTQPb"
+
     {:ok, response} =
-      ("5hikTQPb?list=true&comments=true&key=" <> @key <> "&token=" <> @token)
+      ("#{card_id}?list=true&comments=true&key=" <> @key <> "&token=" <> @token)
       |> get()
 
     body = response.body
-    IO.inspect(body)
+
+    {:ok, deliver_date, _} =
+      body["due"]
+      |> DateTime.from_iso8601()
 
     %{
       image: body["cover"]["sharedSourceUrl"],
       id: body["id"],
       name: body["name"],
-      description: body["desc"]
+      description: body["desc"],
+      deliver_date: deliver_date |> DateTime.to_date(),
+      completed: body["dueComplete"]
     }
   end
 end

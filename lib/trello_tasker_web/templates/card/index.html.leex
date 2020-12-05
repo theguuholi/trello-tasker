@@ -8,45 +8,16 @@
   </form>
 
   <div class="cards">
-    <a href="">
-      <img
-        src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x171/2b15677fc7c06398422c60781fa453ff/photo-1605894646636-bab3db312b65.jpg"
-        alt="Card name">
-      <div>
-        <strong>Test Test</strong>
-        <p>lakjsdfjklasdjklfjlskadlfasfasfads;</p>
-      </div>
-      <i class="fa fa-caret-right" aria-hidden="true"></i>
-    </a>
-    <a href="">
-      <img
-        src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x171/2b15677fc7c06398422c60781fa453ff/photo-1605894646636-bab3db312b65.jpg"
-        alt="Card name">
-      <div>
-        <strong>Test Test</strong>
-        <p>lakjsdfjklasdjklfjlskadlfasfasfads;</p>
-      </div>
-      <i class="fa fa-caret-right" aria-hidden="true"></i>
-    </a>
-    <a href="">
-      <img
-        src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x171/2b15677fc7c06398422c60781fa453ff/photo-1605894646636-bab3db312b65.jpg"
-        alt="Card name">
-      <div>
-        <strong>Test Test</strong>
-        <p>lakjsdfjklasdjklfjlskadlfasfasfads;</p>
-      </div>
-      <i class="fa fa-caret-right" aria-hidden="true"></i>
-    </a>
-    <a href="">
-      <img
-        src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x171/2b15677fc7c06398422c60781fa453ff/photo-1605894646636-bab3db312b65.jpg"
-        alt="Card name">
-      <div>
-        <strong>Test Test</strong>
-        <p>lakjsdfjklasdjklfjlskadlfasfasfads;</p>
-      </div>
-      <i class="fa fa-caret-right" aria-hidden="true"></i>
-    </a>
+    <%= for card <- @cards do %>
+    <%= live_redirect to: Routes.card_info_path(@socket, :index, 1), id: "card-"<>card.id  do %>
+    <img src="<%= card.image %>" alt="<%= card.name %>">
+    <div>
+      <strong><%= card.name %></strong>
+      <p><%= card.description %></p>
+    </div>
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
+    <% end %>
+
+    <% end %>
   </div>
 </section>

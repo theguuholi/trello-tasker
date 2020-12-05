@@ -18,10 +18,10 @@
 
     <header id="main">
       <strong>Trello Tracker</strong>
-      <a href="">
-        <i class="fa fa-chevron-left"></i>
+      <%= live_redirect to: Routes.card_path(@conn, :index) do %>
+      <i class="fa fa-chevron-left"></i>
         Back
-      </a>
+      <% end %>
 
     </header>
     <%= @inner_content %>
