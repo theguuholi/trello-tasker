@@ -2,9 +2,18 @@
   <h1>Monitore seus Cards do trello</h1>
 
 
-  <form action="" id="create-card">
-    <input type="text" placeholder="Informe o numero do card">
-    <button type="submit">Pesquisar</button>
+  <%= f = form_for @changeset, "#",
+      id: "create-card",
+      phx_submit: "search"
+     %>
+
+  <%= text_input f,
+            :path,
+            placeholder: "Informe o numero do card",
+            class: f.errors && f.errors[:path] && "error"
+        %>
+  <%= error_tag f, :path %>
+  <%= submit "Pesquisar", phx_disable_with: "Pesquisando..." %>
   </form>
 
   <div class="cards">

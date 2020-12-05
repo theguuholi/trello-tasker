@@ -1,5 +1,5 @@
 $bg-color: #fff;
-$error-color: #a94442;
+$error-color: #ff92a4;
 $detail-color: #4e51bf;
 $detail-color-1: #24252a;
 $detail-color-2: #ffe9ce;
@@ -12,27 +12,27 @@ $gradient-detail: linear-gradient(-45deg, $detail-color-2, #fff);
 @import "card/info/info";
 
 /* LiveView specific classes for your customizations */
-// .invalid-feedback {
-//   color: #a94442;
-//   display: block;
-//   margin: -1rem 0 2rem;
-// }
+.invalid-feedback {
+  color: $error-color;
+  position: absolute;
+  margin-top: 40px;
+}
 
-// .phx-no-feedback.invalid-feedback, .phx-no-feedback .invalid-feedback {
-//   display: none;
-// }
+.phx-no-feedback.invalid-feedback, .phx-no-feedback .invalid-feedback {
+  display: none;
+}
 
-// .phx-click-loading {
-//   opacity: 0.5;
-//   transition: opacity 1s ease-out;
-// }
+.phx-click-loading {
+  opacity: 0.5;
+  transition: opacity 1s ease-out;
+}
 
-// .phx-disconnected{
-//   cursor: wait;
-// }
-// .phx-disconnected *{
-//   pointer-events: none;
-// }
+.phx-disconnected{
+  cursor: wait;
+}
+.phx-disconnected *{
+  pointer-events: none;
+}
 
 // .phx-modal {
 //   opacity: 1!important;
@@ -71,30 +71,30 @@ $gradient-detail: linear-gradient(-45deg, $detail-color-2, #fff);
 
 
 // /* Alerts and form errors */
-// .alert {
-//   padding: 15px;
-//   margin-bottom: 20px;
-//   border: 1px solid transparent;
-//   border-radius: 4px;
-// }
-// .alert-info {
-//   color: #31708f;
-//   background-color: #d9edf7;
-//   border-color: #bce8f1;
-// }
-// .alert-warning {
-//   color: #8a6d3b;
-//   background-color: #fcf8e3;
-//   border-color: #faebcc;
-// }
-// .alert-danger {
-//   color: #a94442;
-//   background-color: #f2dede;
-//   border-color: #ebccd1;
-// }
-// .alert p {
-//   margin-bottom: 0;
-// }
-// .alert:empty {
-//   display: none;
-// }
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert p {
+  margin-bottom: 0;
+}
+.alert:empty {
+  display: none;
+}

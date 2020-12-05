@@ -19,26 +19,30 @@ defmodule TrelloTasker.Shared.Services.Trello do
     |> Enum.map(&%{text: &1["data"]["text"], user: &1["memberCreator"]["username"]})
   end
 
-  def get_card() do
-    card_id = "5hikTQPb"
-
+  def get_card(card_id) do
     {:ok, response} =
       ("#{card_id}?list=true&comments=true&key=" <> @key <> "&token=" <> @token)
       |> get()
 
-    body = response.body
+    status = response.status
 
-    {:ok, deliver_date, _} =
-      body["due"]
-      |> DateTime.from_iso8601()
+    if status != 200 do
+      {:error, "Erro ao buscar o card"}
+    else
+      body = response.body
 
-    %{
-      image: body["cover"]["sharedSourceUrl"],
-      id: body["id"],
-      name: body["name"],
-      description: body["desc"],
-      deliver_date: deliver_date |> DateTime.to_date(),
-      completed: body["dueComplete"]
-    }
+      {:ok, deliver_date, _} =
+        body["due"]
+        |> DateTime.from_iso8601()
+
+      %{
+        image: body["cover"]["sharedSourceUrl"],
+        id: body["id"],
+        name: body["name"],
+        description: body["desc"],
+        deliver_date: deliver_date |> DateTime.to_date(),
+        completed: body["dueComplete"]
+      }
+    end
   end
 end

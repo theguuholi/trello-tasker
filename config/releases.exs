@@ -27,5 +27,4 @@ config :trello_tasker, TrelloTaskerWeb.Endpoint,
   secret_key_base: secret_key_base,
   check_origin: false
 
-
-  config :trello_tasker, TrelloTaskerWeb.Endpoint, server: true
+config :trello_tasker, TrelloTaskerWeb.Endpoint, server: true
