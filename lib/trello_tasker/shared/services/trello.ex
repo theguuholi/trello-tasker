@@ -31,6 +31,8 @@ defmodule TrelloTasker.Shared.Services.Trello do
     else
       body = response.body
 
+      IO.inspect(body)
+
       {:ok, deliver_date, _} =
         body["due"]
         |> DateTime.from_iso8601()
