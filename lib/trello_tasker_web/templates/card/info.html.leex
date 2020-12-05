@@ -11,7 +11,7 @@
   <ul>
     <li>
       <span>
-        <i class="fa fa-clock-o <%= Date.compare(Date.utc_today(), @card.deliver_date) && "late" %>" aria-hidden="true"></i>
+        <i class="fa fa-clock-o <%= (Date.compare(Date.utc_today(), @card.deliver_date) && !@card.completed) && "late" %>" aria-hidden="true"></i>
         <%= @card.deliver_date %>
       </span>
     </li>
