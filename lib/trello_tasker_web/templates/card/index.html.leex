@@ -18,7 +18,7 @@
 
   <div class="cards">
     <%= for card <- @cards do %>
-    <%= live_redirect to: Routes.card_info_path(@socket, :index, 1), id: "card-"<>card.id  do %>
+    <%= live_redirect to: Routes.card_info_path(@socket, :index, card.card_id), id: "card-"<>card.id  do %>
     <img src="<%= card.image %>" alt="<%= card.name %>">
     <div>
       <strong><%= card.name %></strong>

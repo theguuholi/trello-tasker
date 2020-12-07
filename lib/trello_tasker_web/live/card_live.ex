@@ -15,7 +15,6 @@ defmodule TrelloTaskerWeb.CardLive do
       Cards.list_cards()
       |> IO.inspect
       |> Enum.map(&Trello.get_card(&1.path))
-      |> IO.inspect()
 
     {:ok, assign(socket, changeset: changeset, cards: cards)}
   end

@@ -8,9 +8,9 @@ defmodule TrelloTasker.Shared.Services.Trello do
   @token "ae35721b808c15d75fc663331f7c4a29e092a440b6eb0dd6a1a3ba1e3e3bd56e"
   @key "ee1fa4b7d0f9279cc3a8714291fee1d1"
 
-  def get_comments() do
+  def get_comments(card_id) do
     {:ok, response} =
-      ("5hikTQPb/actions?commentCard&key=" <> @key <> "&token=" <> @token)
+      ("#{card_id}/actions?commentCard&key=" <> @key <> "&token=" <> @token)
       |> get()
 
     body = response.body
@@ -21,7 +21,7 @@ defmodule TrelloTasker.Shared.Services.Trello do
 
   def get_card(card_id) do
     {:ok, response} =
-      ("#{card_id}?list=true&comments=true&key=" <> @key <> "&token=" <> @token)
+      ("#{card_id}?list=true&key=" <> @key <> "&token=" <> @token)
       |> get()
 
     status = response.status
@@ -43,7 +43,8 @@ defmodule TrelloTasker.Shared.Services.Trello do
         name: body["name"],
         description: body["desc"],
         deliver_date: deliver_date |> DateTime.to_date(),
-        completed: body["dueComplete"]
+        completed: body["dueComplete"],
+        card_id: body["shortLink"]
       }
     end
   end

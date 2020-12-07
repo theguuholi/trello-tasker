@@ -5,9 +5,9 @@ defmodule TrelloTaskerWeb.CardInfoLive do
   alias TrelloTaskerWeb.CardView
 
   @impl true
-  def mount(_params, _session, socket) do
-    card_info = TrelloTasker.Shared.Services.Trello.get_card()
-    comments = TrelloTasker.Shared.Services.Trello.get_comments()
+  def mount(%{"card_id" => card_id}, _session, socket) do
+    card_info = TrelloTasker.Shared.Services.Trello.get_card(card_id)
+    comments = TrelloTasker.Shared.Services.Trello.get_comments(card_id)
     {:ok, assign(socket, comments: comments, card: card_info)}
   end
 
